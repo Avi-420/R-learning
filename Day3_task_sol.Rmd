@@ -1,0 +1,122 @@
+# Exercise
+
+## import the Tidyverse libraries & import dataset
+
+```{r}
+install.packages('tidyverse')
+
+#check if it has been download
+library(tidyverse)
+
+```
+
+```{r}
+#load the data to the dataframe
+a <- read_csv('children_bodysize.csv')
+View(a)
+
+#check the data types for each column
+names(a)
+
+```
+
+## plot showing heights vs age
+
+```{r}
+##challenge
+#create a column height containing the stature in cm
+a$height <- a$stature/10
+
+#create a column contaning the age in years
+a$year_old <- a$age/12
+
+#plot showing heights vs age
+plot(height~year_old, data=a)
+
+#plot showing average height of children by age
+plot(height~year_old, data=a, pch='.', col='blue')
+```
+
+## questions
+
+### 1. how many entries are in the dataset
+
+```{r}
+#entries means the row ammount
+entry <- nrow(a)
+entry
+```
+
+### 2. what are the youngest and oldest ages of individuals in the dataset
+
+```{r}
+#youngest
+young <- min(a$year_old)
+young
+
+#oldest
+oldest <- max(a$year_old)
+oldest
+```
+
+### 3. what is the tallest individual in the dataset, are thay male or female?
+
+```{r}
+#find the tallest one
+tallest <- a[which.max(a$height), ]
+
+#find out if the one is male or female
+tallest_gender <- tallest$gender
+tallest_gender
+```
+
+### 4. how many boys are in the dataset
+
+```{r}
+boys <- sum(a$gender == 'M')
+boys
+```
+
+### 5. how many girls are over 12
+
+```{r}
+girl_over_12 <- sum(a$gender == 'F' & a$year_old == 12)
+girl_over_12
+```
+
+### 6. what is the mean height of a 5 year old boy and a 5 year old girl
+
+```{r}
+#5 year old boy
+mean_boy <- mean(a$height[a$gender == 'M' & a$year_old == 5])
+mean_boy
+
+#5 year old girl
+mean_girl <- mean(a$height[a$gender == 'F' & a$year_old == 5])
+mean_girl
+
+```
+
+### 7. what is the mean height of a 15 year old boy and 15 year old girl
+
+```{r}
+#15 year old boy
+mean_boy2 <- mean(a$height[a$gender == 'M' & a$year_old == 15])
+mean_boy2
+
+#15 year old girl
+mean_girl2 <- mean(a$height[a$gender == 'F' & a$year_old == 15])
+mean_girl2
+```
+
+### 8. use a histogram to show the distribution of children's age
+
+```{r}
+hist(a$year_old, main = 'Distribution of age', xlab = 'age', ylab = 'frequency')
+```
+
+### 9. what does the distribution of hte heights of 9 year old males look like
+
+```{r}
+plot(height~year_old, data = subset(a, year_old = 9, gender == 'M'))
+```

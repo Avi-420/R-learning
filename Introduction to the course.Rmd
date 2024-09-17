@@ -1,0 +1,107 @@
+## Table of contents
+
+-   [The Course](https://moodle.ucl.ac.uk/pluginfile.php/7646039/mod_resource/content/2/WelcomeToISSU0053.html#the-course)
+
+-   [The Timetable](https://moodle.ucl.ac.uk/pluginfile.php/7646039/mod_resource/content/2/WelcomeToISSU0053.html#the-timetable)
+
+-   [The Lecturers](https://moodle.ucl.ac.uk/pluginfile.php/7646039/mod_resource/content/2/WelcomeToISSU0053.html#the-lecturers)
+
+-   [The Students](https://moodle.ucl.ac.uk/pluginfile.php/7646039/mod_resource/content/2/WelcomeToISSU0053.html#the-students)
+
+-   [The Assessments](https://moodle.ucl.ac.uk/pluginfile.php/7646039/mod_resource/content/2/WelcomeToISSU0053.html#the-assessments)
+
+-   [The Textbook](https://moodle.ucl.ac.uk/pluginfile.php/7646039/mod_resource/content/2/WelcomeToISSU0053.html#the-textbook)
+
+# **Welcome to ISSU0053: Data Science and Big Data Analytics**
+
+AUTHOR
+
+Dr. Niloufar Abourashchi and Dr. Thomas Honnor
+
+# **The Course**
+
+Thanks for joining us on ISSU0053: Data Science and Big Data Analytics.
+
+Over the course of the three weeks of the summer school, Dr. Niloufar Abourashchi and Dr. Thomas Honnor hope to give you a solid foundation in analysing data using the R statistical programming language.
+
+Upon successful completion of the course, students should be able to meet the learning outcomes:
+
+-   Describe and explain key concepts, skills and tools used in the field of data science to deal with big data problems.
+
+-   Demonstrate how to work with different data sources and formats, and generate suitable R code to perform advanced data manipulation.
+
+-   Apply a suitable range of techniques to explore and visualise large and complex datasets taken from a range of contexts and research areas.
+
+-   Construct statistical models for regression and classifications, including methods such as multivariate regression, KNN, LDA and decision tree analysis.
+
+-   Select appropriate methods to validate, optimise and measure the performance of different statistical methods and be able to assess, evaluate and summarise the results.
+
+# **The Timetable**
+
+You should be able to access a copy of the course timetable on Moodle. We’ll be meeting up in this room every day from the Tuesday of the first week of the summer school, up to and including the Thursday of the third week of the summer school.
+
+There will be a period of lecturing and computer practical from 9:30-12:30, including two 15-minute breaks. Then, from 12:30-13:00 there will be an optional drop-in session where there is no teaching planned, but you are very welcome to raise any questions you might still have. (The Thursday of the third week of the course is the final exam, so there will be no drop-in session on that day.)
+
+We’re all adults, so if you want to step out of the class to use the bathroom, grab a drink, etc. then you’re welcome to do so whenever you need to. Equally, we should be respectful of each others space, possessions, and of noise made when lecturing is taking place.
+
+The UCL Summer School has an attendance policy which you should have been made aware of, and which you should ensure that you meet.
+
+# **The Lecturers**
+
+-   Dr. Niloufar Abourashchi is an Associate Professor (Teaching) in the UCL Department of Statistical Science.
+
+-   Dr. Thomas Honnor is a Lecturer (Teaching) in the UCL Department of Statistical Science.
+
+This is our third year teaching this summer school, and we are both into our eighth year of working in the department at UCL.
+
+We are both friendly and approachable, so please do ask us questions in the sessions to ensure that you get the most out of your time on the course.
+
+# **The Students**
+
+You are joining us from institutions near and far. In Session One of the 2024 summer school that includes institutions in the UK, the Netherlands, Turkey, USA, Canada, India, Singapore, China, South Korea, and Australia. In Session Two of 2024 that includes institutions in the UK, France, Spain, Greece, Singapore, China and Hong Kong.
+
+You are at various stages of your academic journeys. In Session One of the 2024 summer school that ranges from students who have just finished their first year of undergraduate study, to students who are completing postgraduate study. In Session Two of the 2024 summer school that ranges from students who have just finished their first year of undergraduate study, to students who have completed their fourth year of undergraduate study.
+
+You have a range of academic backgrounds. In Session One of the 2024 summer school that includes students on Statistics/Data Science/Artificial Intelligence programmes, Economics/Accounting/Finance/Actuarial Science programmes, Computer Science/Computer Engineering programmes, and Biology and more general Science programmes. In Session Two of the 2024 summer school that includes students on Mathematics/Statistics/Data Science/AI programmes, Economics/Business Analytics programmes, Engineering/Computer Science/Computer Engineering programmes, and a Veterinary Medicine programme.
+
+ISSU0053 is a Level Two course (equivalent to second year undergraduate level). As a result, in addition to the standard UCL Summer School entry criteria, students are expected to have successfully completed at least one undergraduate level module in statistics and have experience of using statistical computer software. You may have seen far more than this, but we have to design the course to be accessible to students with this background.
+
+Spending 3+ hours a day together for close to three weeks means that it would be good if we break the ice and get to know each other a little bit to get started. We can go around the room and introduce ourselves and share something which could allow us to make connections with others on the course. For example:
+
+-   You have spent time in a particular part of the world which you’ve really enjoyed
+
+-   You are a big fan of Taylor Swift/Christiano Ronaldo/Max Verstappen
+
+-   You’re really passionate about computing/the stock market/food/charity and social justice
+
+# **The Assessments**
+
+Hopefully, all students complete the summer school to learn the interesting material being taught, enjoy time in London, and connect with others with similar interests. Some students also plan to use their completion of the summer school to take credits back to their home institution.
+
+Assessments act as personal development, allowing you to determine what you do and don’t actually understand by the end of the course, but also act as a hurdle to ensure that it is appropriate to grant credit to each student.
+
+There are two assessments for ISSU0053:
+
+-   A piece of individual coursework, which will assess your ability to implement and interpret the results of the methodologies introduced throughout the course by applying them to a provided dataset.
+
+-   A final computer-based open-book exam, which will assess your ability to implement and interpret the results of the methodologies introduced throughout the course by answering a collection of mostly short-form programming questions.
+
+For the 2024 summer school:
+
+-   The individual coursework will be released on Wednesday 3rd July and be due for submission by 9.45am on Tuesday 9th July for students taking the course in Session One, and released on Wednesday 24th July and be due for submission by 9.45am on Tuesday 30th July for students taking the course in Session Two.
+
+-   The exam will be on the final day of the course, 9:30-12:30 on Thursday 11th July for students taking the course in Session One and 9:30-12:30 on Thursday 1st August for students taking the course in Session Two.
+
+UCL has standard regulations around academic misconduct, which you should have been informed about by the central summer school team. The Department of Statistical Science has a supplementary document on academic misconduct, which you can find within the “General Assessment Information” section on Moodle.
+
+AI tools are playing an increasing role in students learning. UCL has [standard guidance](https://www.ucl.ac.uk/teaching-learning/generative-ai-hub/using-ai-tools-assessment) on how these may be used, and how they must be [acknowledged](https://library-guides.ucl.ac.uk/referencing-plagiarism/acknowledging-AI) when they are used. The individual coursework will run under Category 2, AI tools can be used in an assistive role, and the exam will run under Category 1, AI tools cannot be used. You are welcome to make use of AI tools to support your learning, but the fact that the final assessment will forbid their use should hopefully encourage you to be able to implement and understand the methodologies introduced yourselves.
+
+# **The Textbook**
+
+It isn’t common for courses in the Department of Statistical Science at UCL to follow a single, specific textbook.
+
+This course is no exception. We plan to provide you with all of the information to support your learning via Moodle.
+
+If there was a most suitable reference book, it would be An Introduction to Statistical Learning with Applications in R (often abbreviated to ISLR). This book is freely available [online](https://www.statlearning.com/) and covers a good amount of the theory and methodology introduced as part of this course.
+
+In recent years the same set of authors have also put together a companion book for Python, An Introduction to Statistical Learning with Applications in Python. ISSU0053 is focused entirely upon use of R (and the assessments will require students to use only R), but if you have an interest in Python then that companion version of the book may be useful.

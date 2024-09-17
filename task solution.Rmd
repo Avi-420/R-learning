@@ -1,0 +1,620 @@
+# **Introduction to R**
+
+AUTHOR
+
+Dr. Niloufar Abourashchi and Dr. Thomas Honnor
+
+# **Starting Out in R**
+
+R is a coding language focused on the interactive analysis of data. It was written as an open-source alternative to the S language, and along with Python is one of the most popular languages for applied data science.
+
+## **RStudio and the R console**
+
+To work and run R code we will use RStudio. This application is an IDE (Integrated Development Environment) that allows us to organise project files, edit code, run code, view results and even to write up our work.
+
+Note: RStudio has other useful functionality for more advanced development work, for example version control, developing R packages, writing interactive data dashboards and web applications.
+
+Typically when we work in RStudio we might see the window divided into four panels. In their default configuration, clockwise from top left:
+
+-   Source
+
+-   Environment/History
+
+-   Files/Plots/Packages/Help/Viewer
+
+-   Console
+
+The placement of these panes and their content can be customized (see the menu bar, Tools → Global Options → Pane Layout).
+
+One of the advantages of using RStudio is that all the information you need to write code is available in a single window. It also has useful data and editing tools, keyboard shortcuts, autocompletion, and code debugging tools.
+
+For now we will concentrate only in the R Console panel, which allows us to type in and run commands. For example, if we type `1+1` and press enter R will show us the result.
+
+## **Maths in R**
+
+We can use R as a calculator using:
+
+-   `+` for addition: `2+3` gives `5`
+
+-   `-` for subtraction: `6-2` gives `4`
+
+-   `*` for multiplication: `4*7` gives `28`
+
+-   `/` for division: `27/3` gives `9`
+
+```{r}
+123+456
+```
+
+```{r}
+9999999/8100000
+```
+
+## Other maths operations
+
+Some other useful R commands when carrying out calculations are:
+
+-   `^` or `**` for raising to a power: `10^2` and `10**2` both give `100`
+
+-   `sqrt` for taking the square root: `sqrt(16)` gives `4`
+
+-   `exp` for taking the exponential: `exp(2)` gives `7.389056`
+
+-   `log` for the natural logarithm: `log(7.389056)` gives `2`
+
+-   `log10` for the logarithm to base 10: `log10(1000)` gives `3`
+
+-   `abs` for the absolute value: `abs(-2.5)` gives `2.5`
+
+The commands like `sqrt` are R *functions* that take input *arguments* using brackets. That is, the command
+
+```{r}
+sqrt(25)
+```
+
+tells R to apply the function called `sqrt` to the input value `25`, producing the result `5`.
+
+### **Scientific notation**
+
+R uses `e`-notation for entering and displaying very large or small numbers in scientific format:
+
+-   `1e6` means 1×106=1000000
+
+-   `2.5e-3` means 2.5×10−3=0.0025
+
+-   `-4e-4` means -4x10(-4)=-0.0004
+
+```{r}
+1000*1000
+```
+
+```{r}
+2.5/10000
+```
+
+```{r}
+3e3+44
+```
+
+```{r}
+1+2e-1
+```
+
+## Structuring calculations
+
+```{r}
+5+3+2/4
+```
+
+```{r}
+5+3+2 /4
+```
+
+```{r}
+5 + 3+2/4
+```
+
+Each one of the codes gives the same result: `8.5`. This is because in R the order of calculations is not affected by spaces, but is completed according to the standard PEMDAS system:
+
+-   **P**arentheses
+
+-   **E**xponents
+
+-   **M**ultiplication/**D**ivision
+
+-   **A**ddition/**S**ubtraction
+
+```{r}
+3/4+2
+```
+
+```{r}
+3/(4+2)
+```
+
+```{r}
+3*4^2
+```
+
+```{r}
+(3*4)^2
+```
+
+Note that in order to make your code easier to read and understand you may add spaces and group expressions with brackets, even if they are not strictly necessary. This means that there will be an element of personal preference in how you structure your code.
+
+For example, `5^2-6/3+1` may be written as either `5^2 - 6/3 + 1` or `(5^2)+(6/3)+1`.
+
+### Exercise
+
+```{r}
+#Using R to carry out each of the following calculations:
+#1
+1+(2+3+4)*6
+
+#2
+24/5+7
+
+#3
+sqrt(400)
+
+#4
+27^1/3 +1
+
+#5
+sin(pi/3)
+```
+
+## **Variables**
+
+To help us work with information we store it as a variable. In R the convention is to use an arrow, `<-`, for assignment.
+
+```{r}
+a <- 3
+b <- 5
+a+b
+```
+
+While the left-facing arrow is almost always the best approach, we can also use an equals sign, `=`, or a right-facing arrow, `->`, to assign data to variables.
+
+```{r}
+c = 4
+5 -> d
+e <- c+d
+e
+```
+
+Note that when we press enter to run a command, R displays the result, except in cases when the output is being stored into a variable.
+
+### **Choosing names for variables**
+
+Variable names should be chosen to be concise but informative. They must start with a letter (not a number) and only contain letters, numbers and the dot, `.`, or underscore, `_`, character.
+
+Variable names cannot use spaces, leading to different naming conventions to get around this:
+
+-   `snake_case_uses_underscores`, for example `population_by_country`
+
+-   `camelCaseUsesCapitals`, for example `populationByCountry`
+
+-   `we.can.instead.use.periods`, for example `population.by.country`
+
+You are free to choose which you prefer, but it is good practice to be consistent within your code files.
+
+Note:
+
+-   Take care to avoid variable names that might overwrite inbuilt commands, for example `plot`, `mean`, `max`. A simple way to do this may be to add a prefix, for example `my_plot`.
+
+-   R is case sensitive. This means `temp` and `Temp` are not equivalent.
+
+### **Types of variables**
+
+We need to deal with many different types of data (e.g. numerical, text, categorical), and we also need to deal with collections of data (e.g. lists, tables).
+
+R contains object classes that let us store and work with these different types of data. Below are some of the common object classes we will work with:
+
+-   integer – these are whole numbers, for example `1`, `-999`, `6752`
+
+-   numeric – these are floating point numbers, for example `1.00`, `-9.99`, `0.6752`
+
+-   logical – these are boolean values, for example `TRUE`, `FALSE`
+
+-   character – these are text (also referred to as strings), for example `some text`, `R is great!`
+
+-   factor – these associate character labels to numerical levels, for example `healthy`, `diseased`
+
+To check the class of a variable, we can use the `class` function:
+
+```{r}
+a <- 'a test string' 
+class(a)
+```
+
+Note that we can also use single quotes, `'`, to denote the start and end of text strings. It doesn’t matter which we use, but we must use the same symbol at both the start and the end of the text string.
+
+```{r}
+wizard <- 'Harry Potter'
+wizard
+```
+
+### **Ways to investigate variables**
+
+We can look at the contents of a variable using the `print` command. You may also see code examples that use alternative commands: `cat` (con*cat*entate and print) or `str` (display *str*ucture).
+
+When we create variables, we say that they are added to our environment. We can see the variables defined in our environment using the `ls` (*l*i*s*t) command or by looking in the Environment tab in top right RStudio panel.
+
+We can remove a variable from the environment using the `rm` command:
+
+```{r}
+a <- 4
+ls()
+```
+
+```{r}
+rm(a)
+ls()
+```
+
+To delete all variables from our environment, we can either click on the broom icon in the Environment tab, or use the command `rm(list=ls())`.
+
+RStudio will help autocomplete your commands and variable names as you type. For example, enter the following code:
+
+```{r}
+very_long_variable_name <- 999
+```
+
+On the next line, if you type `very` you should see the autocomplete options pop up, and you can select an item using the tab key. Similarly if you type `sqr` you should see the autocomplete suggest the function `sqrt()`, and you can press tab to accept the suggestion.
+
+## **Vectors**
+
+Often we want to store a set of data values in R where each value is of the same type, for example numeric. In this case, we can store it in a vector.
+
+We create these using the `c` command (for concatenate/combine).
+
+```{r}
+my_vector <- c('a','b','c','d','e')
+my_vector
+```
+
+```{r}
+class(my_vector)
+```
+
+```{r}
+str(my_vector)
+```
+
+Note: if you forget to use `c` when defining a function you will see an error like:
+
+```{r}
+my_vector2 <- ("a","b","c","d","e")
+```
+
+You will undoubtedly write code which contains errors, and from this develop skills in interpreting error messages output by R.
+
+### **Retrieving data from vectors**
+
+We can use the length function to determine how many items are stored in a vector:
+
+```{r}
+my_vector <- c('a','b','c','d','e')
+length(my_vector)
+```
+
+We can use square brackets, `[` and `]`, to access the items in a vector, by referring to an item’s index (first item has index 1, second has index 2, and so on).
+
+**Single index method**
+
+This lets us retrieve a single value from the vector:
+
+```{r}
+my_vector[1]
+```
+
+**Multiple index method**
+
+We can use a vector of indices to select multiple items:
+
+```{r}
+my_vector[c(1,3,5)]
+```
+
+**Index slice method**
+
+We can use `:` in the format `start_index:end_index` to make a sequence of indices to select:
+
+```{r}
+my_vector[1:3]
+```
+
+**Negative selection method**
+
+If we want all items except certain indices, we can use a negative selection using the `-` operator:
+
+```{r}
+my_vector[-3]
+```
+
+We can also use negative selection with a vector of indices:
+
+```{r}
+my_vector[-c(2,4,5)]
+```
+
+### **Numerical Vectors**
+
+It is possible to apply mathematical operators to vectors that contain numbers.
+
+```{r}
+#Create the following vectors in R:
+a <- c(1,2,3,4,5)
+b <- c(6,7,8,9,10)
+
+#Run the following commands and check you understand the results
+#1
+a+b
+
+#2
+a*b
+
+#3
+a^a
+
+#4
+log(a)
+
+#5
+c <- a+b
+c
+
+#6
+d <- a^b
+d
+```
+
+Vector operations are carried out item-wise, that is if we add vectors `a` and `b` then the first item in vector `a` is added to the first item in vector `b` and so on.
+
+If we ask R to perform a calculation with vectors of different lengths, R will recycle the numbers from the shorter vector to carry out the calculation, for example
+
+```{r}
+c(1,2,3,4,5,6) + c(10,0)
+#相当于反复加变量少的向量
+```
+
+This can be useful, but can also hide issues (for example, R won’t necessarily tell us when the vectors in a calculation have different lengths).
+
+### **Generating vectors**
+
+The `rep` command lets us generate a vector by replicating a single value (or set of values). The first argument passed to the function is what to repeat and the second argument is how many times to repeat it:
+
+```{r}
+a <- rep(0,5)
+a
+```
+
+```{r}
+v1 <- rep(c('a','b','c'),2)
+v1
+```
+
+We can using indexing to replace the values stored in a vector:
+
+```{r}
+a <- rep(0,5)
+a
+```
+
+```{r}
+a[3] <- 7
+a
+```
+
+The seq function lets us generate a sequence in R. To use it, you must specify the start and end values:
+
+```{r}
+seq(1,10)
+```
+
+Here, 1 and 10 are the `seq` function’s arguments. In general, to find out which arguments a function uses we look at the function documentation using the `help` function
+
+The documentation shows you some of the ways to use the function, and the input arguments that we can specify. For example, we might call the `seq` function using
+
+```{r}
+b <- seq(from=0, to=10, by=2)
+b
+```
+
+### **Useful vector functions**
+
+There are many useful functions which operate on vectors, for example: `sum`, `min`, `max`, `range`, `mean`, `median`, `var`, `sd`, `sort`.
+
+```{r}
+d <- c(20,2,8,3)
+
+#sum function
+sum(d)
+
+#min function
+min(d)
+
+#max function
+max(d)
+
+#sort function
+sort(d)
+
+#range function
+range(d)
+
+#mean function
+mean(d)
+
+#median function
+median(d)
+
+#var function
+var(d)
+
+#sd function
+sd(d)
+```
+
+### Exercise
+
+```{r}
+#A seller has auctioned a number of iPhones on eBay and wants to explore their sales data.
+
+#Create a vector that stores the price in pounds of the sold phones: 621, 455, 650, 600, 625, 646, 640, 750, 480, 629, 690, 600.
+price <- c(621,455,650,600, 625, 646, 640, 750, 480, 629, 690, 600)
+
+#What is the total money which has been raised?
+sum(price)
+
+#How many iPhones were sold?
+length(price)
+
+#What was the mean price paid?
+mean(price)
+
+#What was the maximum price paid?
+max(price)
+
+#What was the minimum price paid?
+min(price)
+```
+
+# **More R commands**
+
+At the start of a new section, we will clear R from all of our previously created objects.
+
+```{r}
+rm(list=ls())
+```
+
+## **Relational and logical operators**
+
+In addition to the mathematical operations that let us perform calculations, there are relational operators such as `>`, or greater than, which result in boolean `TRUE` or `FALSE` values. For example:
+
+```{r}
+age <- 21
+age > 3
+
+age > 99
+```
+
+A more complete list of relational operators is:
+
+-   `>`, greater than, for which `age>70` returns `FALSE`
+
+-   `<`, less than, for which `age<70` returns `TRUE`
+
+-   `>=`, greater than or equal to, for which `age>=21` returns `TRUE`
+
+-   `<=`, less than or equal to, for which `age<=21` returns `TRUE`
+
+-   `==`, is equal to, for which `age==18` returns `FALSE`
+
+-   `!=`, is not equal to, for which `age!=18` returns `TRUE`
+
+We can use relational operators on a vector. In that case the test is applied to each value in the vector, producing a vector containing logical `TRUE` or `FALSE` values.
+
+```{r}
+#Run the following commands in R, and check that the output is in agreement with your expectations:
+mass_g <- c(210,340,250,400,390)
+
+#1
+mass_g > 300
+
+#2
+mass_g <= 250
+
+#3
+mass_g == 340
+
+#4
+mass_g != 400
+```
+
+### **Counting Tests**
+
+Often, we might want to count the number of entries in a vector that meet a certain condition. In this case, we can utilise the fact that R treats `TRUE` and `FALSE` values as having numerical values 1 and 0 respectively.
+
+For example:
+
+```{r}
+TRUE+TRUE
+
+FALSE+FALSE
+
+TRUE+FALSE
+```
+
+This means we can make use of the `sum` function to count the number of `TRUE` entries in a vector containing logical `TRUE`/`FALSE` values:
+
+```{r}
+vec1 <- c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE)
+sum(vec1)
+```
+
+For example, to see how many entries in a vector are greater than 300
+
+```{r}
+mass_g <- c(210,340,250,400,390)
+sum(mass_g)
+```
+
+### **Combining tests**
+
+In some cases we might want to combine multiple tests. To do this, we can combine two tests using a logical operators such the and operator `&`. In this case the output will only be `TRUE` if both relations are `TRUE`:
+
+```{r}
+age <- 21
+age>5 & age<99
+
+age>30 & age<99
+```
+
+There are a number of different logical operators:
+
+-   `&`, and, for which `age>=20 & age<=29` returns `TRUE`
+
+-   `|`, or, for which `age<18 | age>65` returns `FALSE`
+
+-   `!`, not, for which `!(age<=30)` returns `FALSE`
+
+In the final example above you can see that brackets, `(` and `)`, can be used to structure expressions.
+
+```{r}
+#run the following commands in R, and check that the output is in agreement with your expectations:
+mass_g <- c(210, 340, 250, 400, 390)
+(mass_g < 350) & (mass_g >= 250)
+
+
+(mass_g < 350) | (mass_g == 400)
+
+
+(mass_g < 250) & (mass_g > 250)
+
+
+!(mass_g < 350)
+```
+
+We can also use logical operators to combine vectors containing boolean, `TRUE`/`FALSE`, values.
+
+In the following example, we assume the entries in the vector represent data on 6 individuals, and whether they smoke or not. Note how we use an R shortcut to enter `TRUE` or `FALSE` values using `T` and `F`. As these represent boolean or logical values (and not character strings), they do not require quotes.
+
+```{r}
+smoker = c(T,F,T,F,F,T)
+male = c(F,F,F,T,T,T)
+
+#To find which individuals are both smokers and male:
+smoker & male
+
+#We see that only the  final individual is a smoker and male
+#To find which individuals are either a smoker or a male:
+smoker | male
+```
+
+We see that all except the second individual are either male or smokers.
+
+### **The `which` function**
+
+It can also be useful to identify which index satisfies a condition. For example, we have two vectors storing student names and their grades from a test:
